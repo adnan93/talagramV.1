@@ -173,8 +173,8 @@ import Vue from "vue";
 export default {
   async created() {
     await axios
-      .get(`http://95.217.131.10:8080/api/v1/Tools/GetList`, {})
-      // .get(this.url2 , {})
+     // .get(`http://95.217.131.10:8080/api/v1/Tools/GetList`, {})
+       .get(this.url2 , {})
       .then((response) => {
         // this.list = response.data.Data;
         this.showList = response.data.Data;
@@ -183,9 +183,9 @@ export default {
 
   async mounted() {
     await axios
-      .get(`http://95.217.131.10:8080/api/v1/CurrentPrice/GetTalagram`, {})
+     // .get(`http://95.217.131.10:8080/api/v1/CurrentPrice/GetTalagram`, {})
 
-      //  .get(this.url1, {})
+        .get(this.url1, {})
       .then((response) => {
         this.dollarPrice = this.numberWithCommas(response.data.Data.usdPrice);
         this.form.ons = response.data.Data.onsPrice.toLocaleString();
@@ -314,9 +314,9 @@ export default {
       this.hobabLoading = true;
       await axios
 
-        .post(`http://95.217.131.10:8080/api/v1/Tools/GetHobab`, this.form)
+      //  .post(`http://95.217.131.10:8080/api/v1/Tools/GetHobab`, this.form)
 
-        // .post(this.url3, this.form)
+         .post(this.url3, this.form)
         .then((response) => {
           this.Hobab1 = response.data.Data.Hobab1;
           this.Hobab2 = response.data.Data.Hobab2;
@@ -331,27 +331,27 @@ export default {
 
     },
 
-    async reset() {
-      // this.showList = [];
-      this.resetLoading = true;
+    // async reset() {
+    //   // this.showList = [];
+    //   this.resetLoading = true;
 
-      this.form.price1 = "";
-      this.form.price2 = "";
-      this.form.ons = this.globalOnc;
-      this.form.dollar = this.globalDolar;
-      this.Hobab1 = "";
-      this.Hobab2 = "";
+    //   this.form.price1 = "";
+    //   this.form.price2 = "";
+    //   this.form.ons = this.globalOnc;
+    //   this.form.dollar = this.globalDolar;
+    //   this.Hobab1 = "";
+    //   this.Hobab2 = "";
 
-      await axios
-        .get(`http://95.217.131.10:8080/api/v1/Tools/GetList`, {})
-        // .get(this.url2)
-        .then((response) => {
-          // this.list = response.data.Data;
-          this.showList = response.data.Data;
-        });
+    //   await axios
+    //    .get(`http://localhost:8080/api/v1/Tools/GetList`, {})
+    //    //  .get(this.url2,{})
+    //     .then((response) => {
+    //       // this.list = response.data.Data;
+    //       this.showList = response.data.Data;
+    //     });
 
-      this.resetLoading = false;
-    },
+    //   this.resetLoading = false;
+    // },
   },
 };
 </script>

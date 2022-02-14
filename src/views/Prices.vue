@@ -240,12 +240,12 @@ export default {
     this.time = new Date(new Date().getTime()).toLocaleTimeString("fa-GB");
 
     await axios
-      .get(`http://95.217.131.10:8080/api/v1/CurrentPrice/GetTalagram`, {})
+     // .get(`http://95.217.131.10:8080/api/v1/CurrentPrice/GetTalagram`, {})
 
-      // await axios
-      //   .get(this.url1, {
+     
+       .get(this.url1, {
 
-      //   })
+        })
       .then((response) => {
         this.usdPrice = Math.round(response.data.Data.usdPrice).toLocaleString(
           "fa"

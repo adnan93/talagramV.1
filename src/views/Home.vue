@@ -190,7 +190,8 @@
                       <b-col class="pr-0" cols="3">
                         <div v-if="mesghalPrice > 0">
                           <p style="color: green">
-                            {{ numberWithCommas(mesghalPrice) }}%
+                            523
+                            <!-- {{ numberWithCommas(mesghalPrice) }}% -->
                           </p>
                         </div>
                         <div v-else>
@@ -1133,7 +1134,7 @@
                       >
                     </div>
                   </template>
-                  <div class="container">
+                  <div class="">
                     <b-card-text>
                       <div>
                         <div>
@@ -1170,7 +1171,7 @@
                               </b>
                             </b-col>
 
-                            <b-col class="pr-0" cols="3">
+                            <b-col class="pa-0" cols="2">
                               <div v-if="sekeRefahPrice > 0">
                                 <p style="color: green">
                                   {{ numberWithCommas(sekeRefahPrice) }}%
@@ -1183,7 +1184,7 @@
                               </div>
                             </b-col>
 
-                            <b-col cols="3">
+                            <b-col cols="4">
                               <b> {{ numberWithCommas(sekeRefahPrice) }} </b>
                             </b-col>
                           </b-row>
@@ -1836,7 +1837,7 @@
                     </div>
                   </template>
 
-                  <div class="container" style="background-color: Light">
+                  <div class="" style="background-color: Light">
                     <b-card-text>
                       <b-row class="test1" dir="rtl">
                         <div>
@@ -2947,10 +2948,10 @@ export default {
     this.today = new Date().toLocaleDateString("fa-IR");
     await axios
 
-      .get(`http://localhost:8080/api/v1/CurrentPrice/GetTalagram`, {})
+     // .get(`http://localhost:8080/api/v1/CurrentPrice/GetTalagram`, {})
 
-      // .get(this.url1, {
-      // })
+      .get(this.url1, {
+      })
       .then((response) => {
         this.dollar = response.data.Data.usdPrice;
         this.ons = response.data.Data.onsPrice.toLocaleString();
