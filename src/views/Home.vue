@@ -1,14 +1,11 @@
 <template>
   <div class="home">
     <div id="nav">
-      <b-row class="tit" style="text-align: center; font-size:20px">
-      <b class="mt-3"
-        
-        >نرخ های امروز {{ today }}</b
-      >
-    </b-row>
+      <b-row class="tit" style="text-align: center; font-size: 20px">
+        <b class="mt-3">نرخ های امروز {{ today }}</b>
+      </b-row>
 
-<!-- 
+      <!-- 
       <div style="text-align: center">
         <b class="mb-0" style="color: #0d5671"> </b>
       </div> -->
@@ -255,9 +252,10 @@
                             </p>
                           </div>
                         </b-col>
+
                         <b-col cols="3">
-                          <p style="color:#742b6c">
-                            {{ numberWithCommas(HobabAbshode) }}
+                          <p style="color: #742b6c">
+                            % {{ numberWithCommas(HobabAbshode) }}
                           </p>
                         </b-col>
                       </b-row>
@@ -365,13 +363,13 @@
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(HobabAbshode) }}%)
+                              ({{ numberWithCommas(HobabAbshode) }})
                             </p>
                           </div>
                         </b-col>
                         <b-col cols="3">
-                          <p style="color:#742b6c">
-                            {{ numberWithCommas(HobabSeke) }}
+                          <p style="color: #742b6c">
+                            {{ numberWithCommas(HobabSeke) }}%
                           </p>
                         </b-col>
                       </b-row>
@@ -483,8 +481,8 @@
                           </div>
                         </b-col>
                         <b-col cols="3">
-                          <p style="color:#742b6c">
-                            {{ numberWithCommas(HobabSekeGhadim) }}
+                          <p style="color: #742b6c">
+                            % {{ numberWithCommas(HobabSekeGhadim) }}
                           </p>
                         </b-col>
                       </b-row>
@@ -596,8 +594,8 @@
                           </div>
                         </b-col>
                         <b-col cols="3">
-                          <p style="color:#742b6c">
-                            {{ numberWithCommas(HobabNim) }}
+                          <p style="color: #742b6c">
+                            % {{ numberWithCommas(HobabNim) }}
                           </p>
                         </b-col>
                       </b-row>
@@ -709,8 +707,8 @@
                           </div>
                         </b-col>
                         <b-col cols="3">
-                          <p style="color:#742b6c">
-                            {{ numberWithCommas(HobabRob) }}
+                          <p style="color: #742b6c">
+                            % {{ numberWithCommas(HobabRob) }}
                           </p>
                         </b-col>
                       </b-row>
@@ -822,8 +820,8 @@
                           </div>
                         </b-col>
                         <b-col cols="3">
-                          <p style="color:#742b6c">
-                            {{ numberWithCommas(HobabGerami) }}
+                          <p style="color: #742b6c">
+                            % {{ numberWithCommas(HobabGerami) }}
                           </p>
                         </b-col>
                       </b-row>
@@ -1239,8 +1237,8 @@
                               </div>
                             </b-col>
                             <b-col cols="3">
-                              <p style="color:#742b6c">
-                                {{ numberWithCommas(HobabRefahCoinFree) }}
+                              <p style="color: #742b6c">
+                                %{{ numberWithCommas(HobabRefahCoinFree) }}
                               </p>
                             </b-col>
                           </b-row>
@@ -1297,7 +1295,8 @@
                               </div>
                             </b-col>
                             <b-col cols="3">
-                              <p style="color:#742b6c">
+                              <p style="color: #742b6c">
+                                %
                                 {{ numberWithCommas(HobabRefahCoinSekeRiyal) }}
                               </p>
                             </b-col>
@@ -1399,7 +1398,7 @@
                             </b-col>
 
                             <b-col class="pr-0" cols="3">
-                              <div v-if="HobabRefahCoinFree > 0">
+                              <div v-if="HobabSaderatCoinFree > 0">
                                 <p style="color: green">
                                   {{ numberWithCommas(HobabSaderatCoinFree) }}%
                                 </p>
@@ -1413,8 +1412,8 @@
                               </div>
                             </b-col>
                             <b-col cols="3">
-                              <p style="color:#742b6c">
-                                {{ numberWithCommas(HobabSaderatCoinFree) }}
+                              <p style="color: #742b6c">
+                                % {{ numberWithCommas(HobabSaderatCoinFree) }}
                               </p>
                             </b-col>
                           </b-row>
@@ -1470,7 +1469,8 @@
                               </div>
                             </b-col>
                             <b-col cols="3">
-                              <p style="color:#742b6c">
+                              <p style="color: #742b6c">
+                                %
                                 {{
                                   numberWithCommas(HobabSaderatCoinSekeRiyal)
                                 }}
@@ -1584,8 +1584,8 @@
                               </div>
                             </b-col>
                             <b-col cols="3">
-                              <p style="color:#742b6c">
-                                {{ numberWithCommas(HobabMellatCoinFree) }}
+                              <p style="color: #742b6c">
+                                % {{ numberWithCommas(HobabMellatCoinFree) }}
                               </p>
                             </b-col>
                           </b-row>
@@ -1642,7 +1642,8 @@
                               </div>
                             </b-col>
                             <b-col cols="3">
-                              <p style="color:#742b6c">
+                              <p style="color: #742b6c">
+                                %
                                 {{ numberWithCommas(HobabMellatCoinSekeRiyal) }}
                               </p>
                             </b-col>
@@ -1752,8 +1753,8 @@
                               </div>
                             </b-col>
                             <b-col cols="3">
-                              <p style="color:#742b6c">
-                                {{ numberWithCommas(HobabSamanCoinFree) }}
+                              <p style="color: #742b6c">
+                                % {{ numberWithCommas(HobabSamanCoinFree) }}
                               </p>
                             </b-col>
                           </b-row>
@@ -1809,8 +1810,8 @@
                               </div>
                             </b-col>
                             <b-col cols="3">
-                              <p style="color:#742b6c">
-                                {{ numberWithCommas(HobabSamanCoinSekeRiyal) }}
+                              <p style="color: #742b6c">
+                                %{{ numberWithCommas(HobabSamanCoinSekeRiyal) }}
                               </p>
                             </b-col>
                           </b-row>
@@ -1876,17 +1877,15 @@
                               <b-col class="pr-0" cols="3">
                                 <div v-if="talaLotusPriceOpen > 0">
                                   <p style="color: green">
-                                    {{
-                                      numberWithCommas(talaLotusPriceOpen)
-                                    }}%</p
-                                  >
+                                    {{ numberWithCommas(talaLotusPriceOpen) }}%
+                                  </p>
                                 </div>
                                 <div v-else>
                                   <p style="color: red">
                                     ({{
                                       numberWithCommas(talaLotusPriceOpen)
-                                    }}%)</p
-                                  >
+                                    }}%)
+                                  </p>
                                 </div>
                               </b-col>
 
@@ -1948,8 +1947,8 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
-                                  {{ numberWithCommas(HobabTalaLotusSeke) }}
+                                <p style="color: #742b6c">
+                                  % {{ numberWithCommas(HobabTalaLotusSeke) }}
                                 </p>
                               </b-col>
                             </b-row>
@@ -2002,8 +2001,8 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
-                                  {{ numberWithCommas(HobabTalaLotusNav) }}
+                                <p style="color: #742b6c">
+                                  % {{ numberWithCommas(HobabTalaLotusNav) }}
                                 </p>
                               </b-col>
                             </b-row>
@@ -2060,7 +2059,7 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
+                                <p style="color: #742b6c">
                                   {{ numberWithCommas(talaLotusPricePrevious) }}
                                 </p>
                               </b-col>
@@ -2111,17 +2110,13 @@
                               <b-col class="pr-0" cols="3">
                                 <div v-if="talaAyarPriceOpen > 0">
                                   <p style="color: green">
-                                    {{
-                                      numberWithCommas(talaAyarPriceOpen)
-                                    }}%</p
-                                  >
+                                    {{ numberWithCommas(talaAyarPriceOpen) }}%
+                                  </p>
                                 </div>
                                 <div v-else>
                                   <p style="color: red">
-                                    ({{
-                                      numberWithCommas(talaAyarPriceOpen)
-                                    }}%)</p
-                                  >
+                                    ({{ numberWithCommas(talaAyarPriceOpen) }}%)
+                                  </p>
                                 </div>
                               </b-col>
 
@@ -2181,8 +2176,8 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
-                                  {{ numberWithCommas(HobabTalaAyarSeke) }}
+                                <p style="color: #742b6c">
+                                  % {{ numberWithCommas(HobabTalaAyarSeke) }}
                                 </p>
                               </b-col>
                             </b-row>
@@ -2235,8 +2230,8 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
-                                  {{ numberWithCommas(HobabTalaAyarNav) }}
+                                <p style="color: #742b6c">
+                                  % {{ numberWithCommas(HobabTalaAyarNav) }}
                                 </p>
                               </b-col>
                             </b-row>
@@ -2293,7 +2288,7 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
+                                <p style="color: #742b6c">
                                   {{ numberWithCommas(talaAyarPricePrevious) }}
                                 </p>
                               </b-col>
@@ -2342,15 +2337,13 @@
                               <b-col class="pr-0" cols="3">
                                 <div v-if="talaZarPriceOpen > 0">
                                   <p style="color: green">
-                                    {{ numberWithCommas(talaZarPriceOpen) }}%</p
-                                  >
+                                    {{ numberWithCommas(talaZarPriceOpen) }}%
+                                  </p>
                                 </div>
                                 <div v-else>
                                   <p style="color: red">
-                                    ({{
-                                      numberWithCommas(talaZarPriceOpen)
-                                    }}%)</p
-                                  >
+                                    ({{ numberWithCommas(talaZarPriceOpen) }}%)
+                                  </p>
                                 </div>
                               </b-col>
 
@@ -2410,8 +2403,8 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
-                                  {{ numberWithCommas(HobabTalaZarSeke) }}
+                                <p style="color: #742b6c">
+                                  % {{ numberWithCommas(HobabTalaZarSeke) }}
                                 </p>
                               </b-col>
                             </b-row>
@@ -2464,8 +2457,8 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
-                                  {{ numberWithCommas(HobabTalaZarNav) }}
+                                <p style="color: #742b6c">
+                                  % {{ numberWithCommas(HobabTalaZarNav) }}
                                 </p>
                               </b-col>
                             </b-row>
@@ -2522,7 +2515,7 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
+                                <p style="color: #742b6c">
                                   {{ numberWithCommas(talaZarPricePrevious) }}
                                 </p>
                               </b-col>
@@ -2572,17 +2565,15 @@
                               <b-col class="pr-0" cols="3">
                                 <div v-if="talaGoharPriceOpen > 0">
                                   <p style="color: green">
-                                    {{
-                                      numberWithCommas(talaGoharPriceOpen)
-                                    }}%</p
-                                  >
+                                    {{ numberWithCommas(talaGoharPriceOpen) }}%
+                                  </p>
                                 </div>
                                 <div v-else>
                                   <p style="color: red">
                                     ({{
                                       numberWithCommas(talaGoharPriceOpen)
-                                    }}%)</p
-                                  >
+                                    }}%)
+                                  </p>
                                 </div>
                               </b-col>
 
@@ -2643,8 +2634,8 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
-                                  {{ numberWithCommas(HobabTalaGoharSeke) }}
+                                <p style="color: #742b6c">
+                                  % {{ numberWithCommas(HobabTalaGoharSeke) }}
                                 </p>
                               </b-col>
                             </b-row>
@@ -2697,8 +2688,8 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
-                                  {{ numberWithCommas(HobabTalaGoharNav) }}
+                                <p style="color: #742b6c">
+                                  % {{ numberWithCommas(HobabTalaGoharNav) }}
                                 </p>
                               </b-col>
                             </b-row>
@@ -2755,7 +2746,7 @@
                                 </div>
                               </b-col>
                               <b-col cols="3">
-                                <p style="color:#742b6c">
+                                <p style="color: #742b6c">
                                   {{ numberWithCommas(talaGoharPricePrevious) }}
                                 </p>
                               </b-col>
@@ -2924,6 +2915,32 @@ export default {
     numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
+
+    decimalAdjust(type, value, exp) {
+      // If the exp is undefined or zero...
+      if (typeof exp === "undefined" || +exp === 0) {
+        return Math[type](value);
+      }
+      value = +value;
+      exp = +exp;
+      // If the value is not a number or the exp is not an integer...
+      if (isNaN(value) || !(typeof exp === "number" && exp % 1 === 0)) {
+        return NaN;
+      }
+      // Shift
+      value = value.toString().split("e");
+      value = Math[type](
+        +(value[0] + "e" + (value[1] ? +value[1] - exp : -exp))
+      );
+      // Shift back
+      value = value.toString().split("e");
+      return +(value[0] + "e" + (value[1] ? +value[1] + exp : exp));
+    },
+
+    round(num) {
+      var m = Number((Math.abs(num) * 100).toPrecision(15));
+      return (Math.round(m) / 100) * Math.sign(num);
+    },
   },
   async mounted() {
     //date
@@ -2945,49 +2962,224 @@ export default {
         this.nimPrice = response.data.Data.nimPrice;
         this.robPrice = response.data.Data.robPrice;
         this.sekeGeramiPrice = response.data.Data.sekeGeramiPrice;
+
+        this.HobabGerami = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabGerami, -4) * 100,
+          -4
+        );
+
         this.sekeRefahPrice = response.data.Data.sekeRefahPrice;
-        this.HobabRefahCoinFree = response.data.Data.HobabRefahCoinFree;
-        this.HobabRefahCoinSekeRiyal =
-          response.data.Data.HobabRefahCoinSekeRiyal;
+
+        this.HobabRefahCoinFree = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabRefahCoinFree,
+            -4
+          ) * 100,
+          -4
+        );
+
+        this.HobabRefahCoinSekeRiyal = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabRefahCoinSekeRiyal,
+            -4
+          ) * 100,
+          -4
+        );
+
         this.sekeSaderatPrice = response.data.Data.sekeSaderatPrice;
-        this.HobabSaderatCoinFree = response.data.Data.HobabSaderatCoinFree;
-        this.HobabSaderatCoinSekeRiyal =
-          response.data.Data.HobabSaderatCoinSekeRiyal;
+
+        this.HobabSaderatCoinFree = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabSaderatCoinFree,
+            -4
+          ) * 100,
+          -4
+        );
+
+        this.HobabSaderatCoinSekeRiyal = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabSaderatCoinSekeRiyal,
+            -4
+          ) * 100,
+          -4
+        );
+
         this.sekeMellatPrice = response.data.Data.sekeMellatPrice;
-        this.HobabMellatCoinFree = response.data.Data.HobabMellatCoinFree;
-        this.HobabMellatCoinSekeRiyal =
-          response.data.Data.HobabMellatCoinSekeRiyal;
+
+        this.HobabMellatCoinFree = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabMellatCoinFree,
+            -4
+          ) * 100,
+          -4
+        );
+
+        this.HobabMellatCoinSekeRiyal = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabMellatCoinSekeRiyal,
+            -4
+          ) * 100,
+          -4
+        );
+
         this.sekeSamanPrice = response.data.Data.sekeSamanPrice;
-        this.HobabSamanCoinFree = response.data.Data.HobabSamanCoinFree;
-        this.HobabSamanCoinSekeRiyal =
-          response.data.Data.HobabSamanCoinSekeRiyal;
+        this.HobabSamanCoinFree = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabSamanCoinFree,
+            -4
+          ) * 100,
+          -4
+        );
+
+        this.HobabSamanCoinSekeRiyal = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabSamanCoinSekeRiyal,
+            -4
+          ) * 100,
+          -4
+        );
+
         this.talaLotusPriceOpen = response.data.Data.talaLotusPriceOpen;
-        this.HobabTalaLotusSeke = response.data.Data.HobabTalaLotusSeke;
-        this.HobabTalaLotusNav = response.data.Data.HobabTalaLotusNav;
+
+        this.HobabTalaLotusSeke = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabTalaLotusSeke,
+            -4
+          ) * 100,
+          -4
+        );
+
+        this.HobabTalaLotusNav = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabTalaLotusNav,
+            -4
+          ) * 100,
+          -4
+        );
+
         this.talaLotusPricePrevious = response.data.Data.talaLotusPricePrevious;
         this.talaAyarPriceOpen = response.data.Data.talaAyarPriceOpen;
-        this.HobabTalaAyarSeke = response.data.Data.HobabTalaAyarSeke;
-        this.HobabTalaAyarNav = response.data.Data.HobabTalaAyarNav;
+
+        this.HobabTalaAyarSeke = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabTalaAyarSeke,
+            -4
+          ) * 100,
+          -4
+        );
+
+        this.HobabTalaAyarNav = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabTalaAyarNav, -4) *
+            100,
+          -4
+        );
+
         this.talaAyarPricePrevious = response.data.Data.talaAyarPricePrevious;
         this.talaZarPriceOpen = response.data.Data.talaZarPriceOpen;
-        this.HobabTalaZarSeke = response.data.Data.HobabTalaZarSeke;
-        this.HobabTalaZarNav = response.data.Data.HobabTalaZarNav;
+
+        this.HobabTalaZarSeke = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabTalaZarSeke, -4) *
+            100,
+          -4
+        );
+
+        this.HobabTalaZarNav = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabTalaZarNav, -4) *
+            100,
+          -4
+        );
+
         this.talaZarPricePrevious = response.data.Data.talaZarPricePrevious;
         this.talaGoharPriceOpen = response.data.Data.talaGoharPriceOpen;
-        this.HobabTalaGoharSeke = response.data.Data.HobabTalaGoharSeke;
-        this.HobabTalaGoharNav = response.data.Data.HobabTalaGoharNav;
+
+        this.HobabTalaGoharSeke = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabTalaGoharSeke,
+            -4
+          ) * 100,
+          -4
+        );
+
+        this.HobabTalaGoharNav = this.decimalAdjust(
+          "round",
+          this.decimalAdjust(
+            "round",
+            response.data.Data.HobabTalaGoharNav,
+            -4
+          ) * 100,
+          -4
+        );
+
         this.talaGoharPricePrevious = response.data.Data.talaGoharPricePrevious;
         this.silverPrice = response.data.Data.silverPrice;
         this.mesghalPrice = response.data.Data.mesghalPrice;
         this.sekePrice = response.data.Data.sekePrice;
         this.sekeGhadimPrice = response.data.Data.sekeGhadimPrice;
+
         this.HobabAbshode = response.data.Data.HobabAbshode;
-        this.HobabSeke = response.data.Data.HobabSeke;
-        this.HobabSekeGhadim = response.data.Data.HobabSekeGhadim;
-        this.HobabNim = response.data.Data.HobabNim;
-        this.HobabRob = response.data.Data.HobabRob;
-        this.HobabGerami = response.data.Data.HobabGerami;
+
+        this.HobabAbshode = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabAbshode, -4) *
+            100,
+          -4
+        );
+
+        this.HobabSeke = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabSeke, -4) * 100,
+          -4
+        );
+
+        this.HobabSekeGhadim = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabSekeGhadim, -4) *
+            100,
+          -4
+        );
+
+        this.HobabNim = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabNim, -4) * 100,
+          -4
+        );
+
+        this.HobabRob = this.decimalAdjust(
+          "round",
+          this.decimalAdjust("round", response.data.Data.HobabRob, -4) * 100,
+          -4
+        );
+
         this.sekeRiyal = response.data.Data.sekeRiyal.toLocaleString();
+
         this.mesghalRiyal = response.data.Data.mesghalRiyal.toLocaleString();
       })
       .catch((e) => {
@@ -3023,9 +3215,7 @@ p {
   width: 15em;
   border-radius: 20px;
   border-style: solid;
-    border-color: rgb(255, 255, 255) !important;
-
-
+  border-color: rgb(255, 255, 255) !important;
 }
 
 .card-header {
@@ -3045,15 +3235,12 @@ div.card-header {
 }
 
 .tit {
- color: #d9b34a !important;
+  color: #d9b34a !important;
   border-color: rgb(243, 242, 232);
   border-style: solid;
   background-color: rgb(231, 230, 223);
-  box-shadow: 3px 1px 5px 1px  rgb(12, 12, 12);
+  box-shadow: 3px 1px 5px 1px rgb(12, 12, 12);
   height: 50px;
-
-
-
 }
 /* 
 .menueItem :hover {
