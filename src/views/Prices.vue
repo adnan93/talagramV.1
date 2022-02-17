@@ -27,12 +27,14 @@
 
         <b-row class="mt-2" align="center">
           <b-col>
-            <div class="card3">
-              <p>
+            <div class="container card3">
+              <h6 class="mb-5" style="font-size: 14px">
                 {{ today }}
                 <br />
                 {{ time }}
-              </p>
+                <br />
+                <p class="mt-1">طلا کلینیک فارس talaclinicfars.ir</p>
+              </h6>
             </div>
           </b-col>
 
@@ -40,7 +42,7 @@
             <div class="card3">
               <h6>
                 <a style="text-decoration: none" href="tel:07132301858">
-                  <p style="color: #742b6c">
+                  <p class="mt-2" style="color: #742b6c">
                     {{ this.en2fa("071-32301858 ") }}
                   </p>
                 </a>
@@ -158,9 +160,16 @@
 
       <b-col cols="2"> </b-col>
     </b-row>
-    <br> <br> <br> <br>     <br> <br> <br> <br>
-    <br> <br>
-
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 </template>
 
@@ -228,7 +237,7 @@ export default {
     },
   },
 
-    created() {
+  created() {
     setInterval(function () {
       window.location.reload();
     }, 30000);
@@ -240,12 +249,9 @@ export default {
     this.time = new Date(new Date().getTime()).toLocaleTimeString("fa-GB");
 
     await axios
-     // .get(`http://95.217.131.10:8080/api/v1/CurrentPrice/GetTalagram`, {})
+      // .get(`http://95.217.131.10:8080/api/v1/CurrentPrice/GetTalagram`, {})
 
-     
-       .get(this.url1, {
-
-        })
+      .get(this.url1, {})
       .then((response) => {
         this.usdPrice = Math.round(response.data.Data.usdPrice).toLocaleString(
           "fa"
@@ -300,10 +306,11 @@ export default {
 .card3 {
   border-radius: 5px;
   color: #742b6c !important;
-  height: 4em;
+  height: 8em;
   background-color: #e3e3e0;
   box-shadow: 3px 5px 10px black;
-  padding: 0.3em;
+  padding: 0.4em;
+  font-size: 10px;
 }
 
 .backGround {
@@ -315,6 +322,5 @@ export default {
   border-radius: 5px;
   /* padding: 0.15%; */
   padding: 0.3em;
-  
 }
 </style>
