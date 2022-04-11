@@ -22,6 +22,9 @@
               outlined
               style="width: 10px"
               color="#d9b34a"
+              right="true"
+
+              
             ></v-select>
 
             <v-text-field
@@ -169,6 +172,7 @@
 import axios from "axios";
 import config from "@/config";
 import Vue from "vue";
+
 
 export default {
   async created() {
@@ -375,6 +379,8 @@ export default {
   /* direction: rtl !important; */
   color: #d9b34a !important;
   padding: 5%;
+  text-align: right !important;
+
 }
 
 
@@ -408,5 +414,28 @@ export default {
   border-color: black;
   padding: 1%;
   height: 4em;
+}
+
+
+
+.v-menu__content {
+    position: absolute;
+    display: inline-block;
+    max-width: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    contain: content;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+    border-radius: 4px;
+}
+
+
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+
 }
 </style>

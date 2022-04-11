@@ -15,19 +15,11 @@ const routes = [
     name: 'About',
     component: () => import('../views/About.vue')
   },
-
-  
-
   {
     path: '/Prices',
     name: 'Prices',
     component: () => import('../views/Prices.vue')
   },
-
-  
-
-  
-
   {
     path: '/Connect',
     name: 'Connect',

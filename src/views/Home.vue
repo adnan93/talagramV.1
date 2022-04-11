@@ -1130,7 +1130,7 @@
                       <b
                         class="mb-0"
                         style="color: #ffffff; text-shadow: 3px 3px 7px black"
-                        >سکه بورسی</b
+                        >سکه یک روزه بورسی</b
                       >
                     </div>
                   </template>
@@ -1140,7 +1140,7 @@
                         <div>
                           <b-row align="right">
                             <b-col class="pl-0" cols="6">
-                              <b style="font-size: 0.8em">
+                              <b style="font-size: 1em">
                                 <!-- <v-icon
                                   title="نمودار"
                                   class="ml-2"
@@ -1167,7 +1167,7 @@
                                   >info</v-icon
                                 >
 
-                                سکه یک روزه بانک رفاه
+                                سکه بانک رفاه
                               </b>
                             </b-col>
 
@@ -1310,7 +1310,7 @@
                         <div>
                           <b-row align="right">
                             <b-col class="pl-0" cols="6">
-                              <b style="font-size: 0.8em">
+                              <b style="font-size: 1em">
                                 <!-- <v-icon
                                   title="نمودار"
                                   class="ml-2"
@@ -1338,7 +1338,7 @@
                                   >info</v-icon
                                 >
 
-                                سکه یک روزه بانک صادرات
+                                سکه بانک صادرات
                               </b>
                             </b-col>
 
@@ -1486,7 +1486,7 @@
                         <div>
                           <b-row align="right">
                             <b-col class="pl-0" cols="6">
-                              <b style="font-size: 0.8em">
+                              <b style="font-size: 1em">
                                 <!-- <v-icon
                                   title="نمودار"
                                   class="ml-2"
@@ -1514,7 +1514,7 @@
                                   >info</v-icon
                                 >
 
-                                سکه یک روزه بانک ملت
+                                سکه بانک ملت
                               </b>
                             </b-col>
 
@@ -1657,7 +1657,7 @@
                         <div>
                           <b-row align="right">
                             <b-col class="pl-0" cols="6">
-                              <b style="font-size: 0.8em">
+                              <b style="font-size: 1em">
                                 <!-- <v-icon
                                   title="نمودار"
                                   class="ml-2"
@@ -1684,7 +1684,7 @@
                                   >info</v-icon
                                 >
 
-                                سکه یک روزه بانک سامان
+                                سکه بانک سامان
                               </b>
                             </b-col>
 
@@ -1832,7 +1832,7 @@
                       <b
                         class="mb-0"
                         style="color: #ffffff; text-shadow: 3px 3px 7px black"
-                        >صندوق طلا</b
+                        > صندوق های پشتوانه طلا</b
                       >
                     </div>
                   </template>
@@ -1844,7 +1844,7 @@
                           <div>
                             <b-row align="right">
                               <b-col class="pl-0" cols="6">
-                                <b style="font-size: 0.8em">
+                                <b style="font-size: 1em">
                                   <!-- <v-icon
                                     title="نمودار"
                                     class="ml-2"
@@ -1871,7 +1871,7 @@
                                     >info</v-icon
                                   >
 
-                                  صندوق پشتوانه طلای لوتس (طلا)
+                                  صندوق لوتس (طلا)
                                 </b>
                               </b-col>
 
@@ -2076,7 +2076,7 @@
                           <div>
                             <b-row align="right">
                               <b-col class="pl-0" cols="6">
-                                <b style="font-size: 0.8em">
+                                <b style="font-size: 1em">
                                   <!-- <v-icon
                                     title="نمودار"
                                     class="ml-2"
@@ -2104,7 +2104,7 @@
                                     >info</v-icon
                                   >
 
-                                  صندوق پشتوانه طلای مفید (عیار)
+                                  صندوق مفید (عیار)
                                 </b>
                               </b-col>
 
@@ -2304,7 +2304,7 @@
                           <div>
                             <b-row align="right">
                               <b-col class="pl-0" cols="6">
-                                <b style="font-size: 0.8em">
+                                <b style="font-size: 1em">
                                   <!-- <v-icon
                                     title="نمودار"
                                     class="ml-2"
@@ -2331,7 +2331,7 @@
                                     >info</v-icon
                                   >
 
-                                  صندوق پشتوانه طلای زر (زر)
+                                  صندوق زر (زر)
                                 </b>
                               </b-col>
 
@@ -2531,7 +2531,7 @@
                           <div>
                             <b-row align="right">
                               <b-col class="pl-0" cols="6">
-                                <b style="font-size: 0.8em">
+                                <b style="font-size: 1em">
                                   <!-- <v-icon
                                     title="نمودار"
                                     class="ml-2"
@@ -2559,7 +2559,7 @@
                                     >info</v-icon
                                   >
 
-                                  صندوق پشتوانه طلای کیان (گوهر)
+                                  صندوق کیان (گوهر)
                                 </b>
                               </b-col>
 
@@ -2946,11 +2946,12 @@ export default {
   async mounted() {
     //date
     this.today = new Date().toLocaleDateString("fa-IR");
-    await axios
-
-     // .get(`http://localhost:8080/api/v1/CurrentPrice/GetTalagram`, {})
-
-      .get(this.url1, {
+    await axios.get(this.url1, {
+        headers: {
+           'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin": "*",
+           "Accept-Control-Allow-Origin": "*"
+        },
       })
       .then((response) => {
         this.dollar = response.data.Data.usdPrice;
@@ -3248,4 +3249,6 @@ div.card-header {
  color: #d9b34a !important; 
   transition: 0.90s;
 } */
+
+
 </style>
