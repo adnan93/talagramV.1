@@ -9,7 +9,7 @@
 
       <b-col cols="8">
         <b-row dir="rtl">
-          <b-col class="firstcol" align="right" dir="ltr">
+          <b-col class="firstcol" align="right" right  dir="ltr">
             <v-select
               reverse
               class="select"
@@ -22,8 +22,9 @@
               outlined
               style="width: 10px"
               color="#d9b34a"
-              right="true"
-
+              right
+              :menu-props="{ contentClass: 'three-dropdown' }"
+              
               
             ></v-select>
 
@@ -50,6 +51,8 @@
               dense
               outlined
               color="#d9b34a"
+                            :menu-props="{ contentClass: 'three-dropdown' }"
+
             ></v-select>
             <v-text-field
               reverse
@@ -172,6 +175,11 @@
 import axios from "axios";
 import config from "@/config";
 import Vue from "vue";
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify, {
+  rtl: true
+})
 
 
 export default {
@@ -373,15 +381,23 @@ export default {
   padding-left: 15%;
 } */
 
-.select {
+::v-deep .select {
   width: 350px !important;
   border-radius: 20px;
-  /* direction: rtl !important; */
   color: #d9b34a !important;
-  padding: 5%;
   text-align: right !important;
-
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
+
+.v-list-item__content{
+  text-align: right !important
+}
+
+input{
+  direction: rtl !important;
+}
+
 
 
 .select2 {
@@ -408,34 +424,15 @@ export default {
   background-color: #e3e3e0;
   /* box-shadow: 5px 5px 50px 5px  rgb(223, 8, 8); */
   border-style: double;
-
   width: 270px !important;
-
   border-color: black;
   padding: 1%;
   height: 4em;
 }
 
-
-
-.v-menu__content {
-    position: absolute;
-    display: inline-block;
-    max-width: 80%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    contain: content;
-    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
-    border-radius: 4px;
-}
-
-
-body {
-    margin: 0;
-    font-family: var(--bs-body-font-family);
-    font-size: var(--bs-body-font-size);
-    font-weight: var(--bs-body-font-weight);
-    line-height: var(--bs-body-line-height);
-
-}
+.three-dropdown .v-list {
+        /* display: grid; */
+        /* grid-template-columns: repeat(auto-fill, minmax(33%, auto)); */
+        text-align: right;
+    }
 </style>

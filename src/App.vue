@@ -28,7 +28,7 @@
         <b-navbar-toggle style="color:white;" target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse style="color:white;" class="mr-15" id="nav-collapse" is-nav>
-          <b-navbar-nav>
+          <b-navbar-nav style="color:white;">
             <b-nav-item class="ml-2" href="#">
               <h6>
                 <b style="color: #bea44d"> </b>
@@ -77,6 +77,7 @@
             </b-nav-item> -->
           </b-navbar-nav>
         </b-collapse>
+
       </b-navbar>
     </b-row>
 
@@ -259,5 +260,10 @@ a {
   color: #f5d438 !important;
   transition: 0.5s;
   // opacity: 0.6;
+}
+
+.navbar-light .navbar-toggler {
+    color: #f5d438;
+    border-color: #f5d438;
 }
 </style>

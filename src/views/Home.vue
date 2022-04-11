@@ -1832,7 +1832,8 @@
                       <b
                         class="mb-0"
                         style="color: #ffffff; text-shadow: 3px 3px 7px black"
-                        > صندوق های پشتوانه طلا</b
+                      >
+                        صندوق های پشتوانه طلا</b
                       >
                     </div>
                   </template>
@@ -2943,14 +2944,30 @@ export default {
       return (Math.round(m) / 100) * Math.sign(num);
     },
   },
+
   async mounted() {
-    //date
+   
+
+  },
+
+ async created() {
+
+     //date
     this.today = new Date().toLocaleDateString("fa-IR");
-    await axios.get(this.url1, {
-        headers: {
-           'Content-Type': 'application/json',
+
+
+      setInterval(function () {
+
+      window.location.reload();
+
+      
+    }, 30000);
+
+
+    await axios.get(this.url1, { headers: {
+          "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
-           "Accept-Control-Allow-Origin": "*"
+          "Accept-Control-Allow-Origin": "*",
         },
       })
       .then((response) => {
@@ -3187,12 +3204,11 @@ export default {
       .catch((e) => {
         this.errors.push(e);
       });
-  },
 
-  created() {
-    setInterval(function () {
-      window.location.reload();
-    }, 30000);
+  
+
+
+
   },
 };
 </script>
@@ -3249,6 +3265,4 @@ div.card-header {
  color: #d9b34a !important; 
   transition: 0.90s;
 } */
-
-
 </style>
