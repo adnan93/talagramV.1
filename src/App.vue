@@ -27,8 +27,8 @@
 
         <b-navbar-toggle style="color:white;" target="nav-collapse"></b-navbar-toggle>
 
-        <b-collapse style="color:white;" class="mr-15" id="nav-collapse" is-nav>
-          <b-navbar-nav style="color:white;">
+        <b-collapse  class="mr-15" id="nav-collapse" is-nav>
+          <b-navbar-nav >
             <b-nav-item class="ml-2" href="#">
               <h6>
                 <b style="color: #bea44d"> </b>
@@ -264,6 +264,7 @@ a {
 
 .navbar-light .navbar-toggler {
     color: #f5d438;
-    border-color: #f5d438;
+    border-color: rgb(85, 81, 78);
+    
 }
 </style>
