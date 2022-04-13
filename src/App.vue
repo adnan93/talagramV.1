@@ -27,7 +27,7 @@
 
         <b-navbar-toggle style="color:white;" target="nav-collapse"></b-navbar-toggle>
 
-        <b-collapse  class="mr-15" id="nav-collapse" is-nav>
+        <b-collapse class="mr-15" id="nav-collapse" is-nav>
           <b-navbar-nav >
             <b-nav-item class="ml-2" href="#">
               <h6>
@@ -267,4 +267,21 @@ a {
     border-color: rgb(85, 81, 78);
     
 }
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #c4ab30;
+    border: 0.5px solid transparent;
+    border-radius: 0.25rem;
+    transition: box-shadow 0.15s ease-in-out;
+    border-color: #c4ab30 !important;
+    color: #c4ab30 !important;
+    margin-left: 0.5em;
+}
+
+
+
+
 </style>
