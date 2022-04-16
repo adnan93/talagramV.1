@@ -54,8 +54,8 @@
               <h6  class="menueItem"><b   style="color: #efede9"> ارتباط با ما </b></h6>
             </b-nav-item> -->
 
-            <b-nav-item class="ml-2" href="/ShowPrice">
-              <h6  class="menueItem"><b style="color: #efede9"> سوالات متداول </b></h6>
+            <b-nav-item class="ml-2" href="/Questions">
+              <h6  class="menueItem"><b style="color: #efede9"> ویدیو‌ های آموزشی </b></h6>
             </b-nav-item>
 
             <!-- <b-nav-item class="ml-2" href="ShowPrice2">

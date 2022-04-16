@@ -2125,7 +2125,7 @@
                                 </div>
                               </b-col>
 
-                              <b-col class="p-0"  cols="3">
+                              <b-col class="p-0" cols="3">
                                 <b>
                                   {{ numberWithCommas(talaAyarPriceOpen) }}
                                 </b>
@@ -2783,6 +2783,11 @@
 import axios from "axios";
 import config from "@/config";
 
+// import VueAxios from 'vue-axios'
+// import vue from 'vue'
+
+// vue.use(VueAxios, axios)
+
 // import { createChart } from "lightweight-charts";
 //  import { LightweightCharts } from "lightweight-charts";
 
@@ -2867,56 +2872,291 @@ export default {
   components: {},
 
   methods: {
-    showChart() {
-      // this.$router.push({ path: "/MainChart" });
 
-      let routeData = this.$router.resolve({ path: "/MainChart" });
-      window.open(routeData.href, "_blank");
+    async btcTrkAPICall() {
+      await axios
+        .get(this.url1, {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Accept-Control-Allow-Origin": "*",
+          },
+        })
+        .then((response) => {
+          this.dollar = response.data.Data.usdPrice;
+          this.ons = response.data.Data.onsPrice.toLocaleString();
+          this.silver = response.data.Data.silverPrice;
+          this.geramTalaPrice =
+            response.data.Data.geramTalaPrice.toLocaleString();
+
+          this.gram24TalaPrice = this.decimalAdjust(
+            "round",
+            response.data.Data.gram24TalaPrice,
+            0
+          );
+
+          //    this.gram24TalaPrice =   response.data.Data.gram24TalaPrice
+
+          this.nimPrice = response.data.Data.nimPrice;
+          this.robPrice = response.data.Data.robPrice;
+          this.sekeGeramiPrice = response.data.Data.sekeGeramiPrice;
+
+          this.HobabGerami = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", response.data.Data.HobabGerami, -4) *
+              100,
+            -4
+          );
+
+          this.sekeRefahPrice = response.data.Data.sekeRefahPrice;
+
+          this.HobabRefahCoinFree = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabRefahCoinFree,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabRefahCoinSekeRiyal = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabRefahCoinSekeRiyal,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.sekeSaderatPrice = response.data.Data.sekeSaderatPrice;
+
+          this.HobabSaderatCoinFree = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabSaderatCoinFree,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabSaderatCoinSekeRiyal = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabSaderatCoinSekeRiyal,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.sekeMellatPrice = response.data.Data.sekeMellatPrice;
+
+          this.HobabMellatCoinFree = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabMellatCoinFree,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabMellatCoinSekeRiyal = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabMellatCoinSekeRiyal,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.sekeSamanPrice = response.data.Data.sekeSamanPrice;
+          this.HobabSamanCoinFree = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabSamanCoinFree,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabSamanCoinSekeRiyal = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabSamanCoinSekeRiyal,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.talaLotusPriceOpen = response.data.Data.talaLotusPriceOpen;
+
+          this.HobabTalaLotusSeke = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabTalaLotusSeke,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabTalaLotusNav = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabTalaLotusNav,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.talaLotusPricePrevious =
+            response.data.Data.talaLotusPricePrevious;
+          this.talaAyarPriceOpen = response.data.Data.talaAyarPriceOpen;
+
+          this.HobabTalaAyarSeke = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabTalaAyarSeke,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabTalaAyarNav = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabTalaAyarNav,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.talaAyarPricePrevious = response.data.Data.talaAyarPricePrevious;
+          this.talaZarPriceOpen = response.data.Data.talaZarPriceOpen;
+
+          this.HobabTalaZarSeke = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabTalaZarSeke,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabTalaZarNav = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabTalaZarNav,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.talaZarPricePrevious = response.data.Data.talaZarPricePrevious;
+          this.talaGoharPriceOpen = response.data.Data.talaGoharPriceOpen;
+
+          this.HobabTalaGoharSeke = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabTalaGoharSeke,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabTalaGoharNav = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabTalaGoharNav,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.talaGoharPricePrevious =
+            response.data.Data.talaGoharPricePrevious;
+          this.silverPrice = response.data.Data.silverPrice;
+          this.mesghalPrice = response.data.Data.mesghalPrice;
+          this.sekePrice = response.data.Data.sekePrice;
+          this.sekeGhadimPrice = response.data.Data.sekeGhadimPrice;
+
+          this.HobabAbshode = response.data.Data.HobabAbshode;
+
+          this.HobabAbshode = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", response.data.Data.HobabAbshode, -4) *
+              100,
+            -4
+          );
+
+          this.HobabSeke = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", response.data.Data.HobabSeke, -4) * 100,
+            -4
+          );
+
+          this.HobabSekeGhadim = this.decimalAdjust(
+            "round",
+            this.decimalAdjust(
+              "round",
+              response.data.Data.HobabSekeGhadim,
+              -4
+            ) * 100,
+            -4
+          );
+
+          this.HobabNim = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", response.data.Data.HobabNim, -4) * 100,
+            -4
+          );
+
+          this.HobabRob = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", response.data.Data.HobabRob, -4) * 100,
+            -4
+          );
+
+          // this.sekeRiyal = response.data.Data.sekeRiyal.toLocaleString();
+
+          this.sekeRiyal = this.decimalAdjust(
+            "round",
+            response.data.Data.sekeRiyal,
+            0
+          );
+
+          this.mesghalRiyal = this.decimalAdjust(
+            "round",
+            response.data.Data.mesghalRiyal,
+            0
+          );
+        })
+        .catch((e) => {
+          this.errors.push(e);
+        });
     },
 
-    //nrkhha
-    showHobabRefahDetail() {
-      this.showHobabRefah = !this.showHobabRefah;
-    },
-    showHobabSaderatDetail() {
-      this.showHobabSaderat = !this.showHobabSaderat;
-    },
-    showHobabMelatDetail() {
-      this.showHobabMelat = !this.showHobabMelat;
-    },
-    showHobabSamanDetail() {
-      this.showHobabSaman = !this.showHobabSaman;
-    },
-    showHobabLoutosDetails() {
-      this.showHobabLoutos = !this.showHobabLoutos;
-    },
-    showHobabEyarDetails() {
-      this.showHobabEyar = !this.showHobabEyar;
-    },
-    showHobabZarDetails() {
-      this.showHobabZar = !this.showHobabZar;
-    },
-    showHobabGoharDetails() {
-      this.showHobabGohar = !this.showHobabGohar;
-    },
-    showHobabmesghalDetails() {
-      this.showHobabmesghal = !this.showHobabmesghal;
-    },
-    showHobabSekeDetails() {
-      this.showHobabSeke = !this.showHobabSeke;
-    },
-    showHobabGhadimDetails() {
-      this.showHobabGhadim = !this.showHobabGhadim;
-    },
-    // showHobabNimDetails() {
-    //   this.showHobabNim = !this.showHobabNim;
-    // },
-    // showHobabRobDetails() {
-    //   this.showHobabRob = !this.showHobabRob;
-    // },
-    showHobabGeramiDetails() {
-      this.showHobabGerami = !this.showHobabGerami;
-    },
+     intervalFetchData(){
+            setInterval(() => {    
+                this.btcTrkAPICall();
+                }, 10000);    
+        },
+
+
     numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
@@ -2948,275 +3188,14 @@ export default {
     },
   },
 
-  async mounted() {},
+  async mounted() {
+    this.btcTrkAPICall();
+      this.intervalFetchData();
+  },
 
   async created() {
     //date
     this.today = new Date().toLocaleDateString("fa-IR");
-
-    setInterval(function () {
-      window.location.reload();
-    }, 30000);
-
-    await axios
-      .get(this.url1, {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Accept-Control-Allow-Origin": "*",
-        },
-      })
-      .then((response) => {
-        this.dollar = response.data.Data.usdPrice;
-        this.ons = response.data.Data.onsPrice.toLocaleString();
-        this.silver = response.data.Data.silverPrice;
-        this.geramTalaPrice =
-          response.data.Data.geramTalaPrice.toLocaleString();
-
-        this.gram24TalaPrice = this.decimalAdjust(
-          "round",
-          response.data.Data.gram24TalaPrice,
-          0
-        );
-
-        //    this.gram24TalaPrice =   response.data.Data.gram24TalaPrice
-
-        this.nimPrice = response.data.Data.nimPrice;
-        this.robPrice = response.data.Data.robPrice;
-        this.sekeGeramiPrice = response.data.Data.sekeGeramiPrice;
-
-        this.HobabGerami = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabGerami, -4) * 100,
-          -4
-        );
-
-        this.sekeRefahPrice = response.data.Data.sekeRefahPrice;
-
-        this.HobabRefahCoinFree = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabRefahCoinFree,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.HobabRefahCoinSekeRiyal = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabRefahCoinSekeRiyal,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.sekeSaderatPrice = response.data.Data.sekeSaderatPrice;
-
-        this.HobabSaderatCoinFree = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabSaderatCoinFree,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.HobabSaderatCoinSekeRiyal = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabSaderatCoinSekeRiyal,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.sekeMellatPrice = response.data.Data.sekeMellatPrice;
-
-        this.HobabMellatCoinFree = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabMellatCoinFree,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.HobabMellatCoinSekeRiyal = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabMellatCoinSekeRiyal,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.sekeSamanPrice = response.data.Data.sekeSamanPrice;
-        this.HobabSamanCoinFree = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabSamanCoinFree,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.HobabSamanCoinSekeRiyal = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabSamanCoinSekeRiyal,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.talaLotusPriceOpen = response.data.Data.talaLotusPriceOpen;
-
-        this.HobabTalaLotusSeke = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabTalaLotusSeke,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.HobabTalaLotusNav = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabTalaLotusNav,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.talaLotusPricePrevious = response.data.Data.talaLotusPricePrevious;
-        this.talaAyarPriceOpen = response.data.Data.talaAyarPriceOpen;
-
-        this.HobabTalaAyarSeke = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabTalaAyarSeke,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.HobabTalaAyarNav = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabTalaAyarNav, -4) *
-            100,
-          -4
-        );
-
-        this.talaAyarPricePrevious = response.data.Data.talaAyarPricePrevious;
-        this.talaZarPriceOpen = response.data.Data.talaZarPriceOpen;
-
-        this.HobabTalaZarSeke = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabTalaZarSeke, -4) *
-            100,
-          -4
-        );
-
-        this.HobabTalaZarNav = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabTalaZarNav, -4) *
-            100,
-          -4
-        );
-
-        this.talaZarPricePrevious = response.data.Data.talaZarPricePrevious;
-        this.talaGoharPriceOpen = response.data.Data.talaGoharPriceOpen;
-
-        this.HobabTalaGoharSeke = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabTalaGoharSeke,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.HobabTalaGoharNav = this.decimalAdjust(
-          "round",
-          this.decimalAdjust(
-            "round",
-            response.data.Data.HobabTalaGoharNav,
-            -4
-          ) * 100,
-          -4
-        );
-
-        this.talaGoharPricePrevious = response.data.Data.talaGoharPricePrevious;
-        this.silverPrice = response.data.Data.silverPrice;
-        this.mesghalPrice = response.data.Data.mesghalPrice;
-        this.sekePrice = response.data.Data.sekePrice;
-        this.sekeGhadimPrice = response.data.Data.sekeGhadimPrice;
-
-        this.HobabAbshode = response.data.Data.HobabAbshode;
-
-        this.HobabAbshode = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabAbshode, -4) *
-            100,
-          -4
-        );
-
-        this.HobabSeke = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabSeke, -4) * 100,
-          -4
-        );
-
-        this.HobabSekeGhadim = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabSekeGhadim, -4) *
-            100,
-          -4
-        );
-
-        this.HobabNim = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabNim, -4) * 100,
-          -4
-        );
-
-        this.HobabRob = this.decimalAdjust(
-          "round",
-          this.decimalAdjust("round", response.data.Data.HobabRob, -4) * 100,
-          -4
-        );
-
-        // this.sekeRiyal = response.data.Data.sekeRiyal.toLocaleString();
-
-        this.sekeRiyal = this.decimalAdjust(
-          "round",
-          response.data.Data.sekeRiyal,
-          0
-        );
-
-        this.mesghalRiyal = this.decimalAdjust(
-          "round",
-          response.data.Data.mesghalRiyal,
-          0
-        );
-      })
-      .catch((e) => {
-        this.errors.push(e);
-      });
   },
 };
 </script>
