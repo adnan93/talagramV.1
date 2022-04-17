@@ -106,7 +106,7 @@
           <b-col
             ><div class="card1">
               <b-row>
-                <b> نیم سکه 68 </b>
+                <b> نیم سکه 86 </b>
               </b-row>
               {{ nimPrice }}
             </div>
