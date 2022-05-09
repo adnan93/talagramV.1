@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <b-row class="tit" style="text-align: center; font-size:23px ">
+    <b-row class="tit" style="text-align: center; font-size: 23px">
       <b class="mt-2">محاسبه قيمت حباب</b>
     </b-row>
     <br />
@@ -9,7 +9,7 @@
 
       <b-col cols="8">
         <b-row dir="rtl">
-          <b-col class="firstcol" align="right" right  dir="ltr">
+          <b-col class="firstcol" align="right" right dir="ltr">
             <v-select
               reverse
               class="select"
@@ -24,8 +24,6 @@
               color="#d9b34a"
               right
               :menu-props="{ contentClass: 'three-dropdown' }"
-              
-              
             ></v-select>
 
             <v-text-field
@@ -51,8 +49,7 @@
               dense
               outlined
               color="#d9b34a"
-                            :menu-props="{ contentClass: 'three-dropdown' }"
-
+              :menu-props="{ contentClass: 'three-dropdown' }"
             ></v-select>
             <v-text-field
               reverse
@@ -130,34 +127,24 @@
         <br />
         <hr />
 
-    
-
         <b-row dir="rtl">
           <b-col class="ml-2 result" align="center">
             حباب اول
-            <div  v-if="parseFloat(this.Hobab1) > 0">
-              <p style="color: green">
-                {{ parseFloat(this.Hobab1) }}%
-              </p>
+            <div v-if="parseFloat(this.Hobab1) > 0">
+              <p style="color: green">{{ parseFloat(this.Hobab1) }}%</p>
             </div>
             <div v-else>
-              <p style="color: red">
-               ({{ parseFloat(this.Hobab1)  }})%
-              </p>
+              <p style="color: red">({{ parseFloat(this.Hobab1) }})%</p>
             </div>
           </b-col>
 
-            <b-col class="mr-2 result" align="center">
+          <b-col class="mr-2 result" align="center">
             حباب دوم
-            <div  v-if="parseFloat(this.Hobab2) > 0">
-              <p style="color: green">
-                {{ parseFloat(this.Hobab2) }}%
-              </p>
+            <div v-if="parseFloat(this.Hobab2) > 0">
+              <p style="color: green">{{ parseFloat(this.Hobab2) }}%</p>
             </div>
             <div v-else>
-              <p style="color: red">
-                ({{ parseFloat(this.Hobab2) }})%
-              </p>
+              <p style="color: red">({{ parseFloat(this.Hobab2) }})%</p>
             </div>
           </b-col>
         </b-row>
@@ -175,29 +162,33 @@
 import axios from "axios";
 import config from "@/config";
 import Vue from "vue";
-import Vuetify from 'vuetify'
+import Vuetify from "vuetify";
 
 Vue.use(Vuetify, {
-  rtl: true
-})
-
+  rtl: true,
+});
 
 export default {
   async created() {
     await axios
-     // .get(`http://95.217.131.10:8080/api/v1/Tools/GetList`, {})
-       .get(this.url2 , {})
+      // .get(`http://95.217.131.10:8080/api/v1/Tools/GetList`, {})
+      .get(this.url2, {})
       .then((response) => {
-        // this.list = response.data.Data;
         this.showList = response.data.Data;
+
+        for (var item of this.showList) {
+          if (item.Name == "یک مثقال طلا") {
+            item.Name = "آبشده";
+          }
+        }
       });
   },
 
   async mounted() {
     await axios
-     // .get(`http://95.217.131.10:8080/api/v1/CurrentPrice/GetTalagram`, {})
+      // .get(`http://95.217.131.10:8080/api/v1/CurrentPrice/GetTalagram`, {})
 
-        .get(this.url1, {})
+      .get(this.url1, {})
       .then((response) => {
         this.dollarPrice = this.numberWithCommas(response.data.Data.usdPrice);
         this.form.ons = response.data.Data.onsPrice.toLocaleString();
@@ -326,9 +317,9 @@ export default {
       this.hobabLoading = true;
       await axios
 
-      //  .post(`http://95.217.131.10:8080/api/v1/Tools/GetHobab`, this.form)
+        //  .post(`http://95.217.131.10:8080/api/v1/Tools/GetHobab`, this.form)
 
-         .post(this.url3, this.form)
+        .post(this.url3, this.form)
         .then((response) => {
           this.Hobab1 = response.data.Data.Hobab1;
           this.Hobab2 = response.data.Data.Hobab2;
@@ -338,9 +329,8 @@ export default {
         });
       this.hobabLoading = false;
 
-      console.log( parseFloat(this.Hobab1))
-      console.log(parseFloat(this.Hobab2))
-
+      console.log(parseFloat(this.Hobab1));
+      console.log(parseFloat(this.Hobab2));
     },
 
     // async reset() {
@@ -390,15 +380,13 @@ export default {
   padding-right: 0px !important;
 }
 
-.v-list-item__content{
-  text-align: right !important
+.v-list-item__content {
+  text-align: right !important;
 }
 
-input{
+input {
   direction: rtl !important;
 }
-
-
 
 .select2 {
   width: 110px !important;
@@ -431,8 +419,8 @@ input{
 }
 
 .three-dropdown .v-list {
-        /* display: grid; */
-        /* grid-template-columns: repeat(auto-fill, minmax(33%, auto)); */
-        text-align: right;
-    }
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(33%, auto)); */
+  text-align: right;
+}
 </style>

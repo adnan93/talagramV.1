@@ -323,4 +323,6 @@ export default {
   /* padding: 0.15%; */
   padding: 0.3em;
 }
+
+
 </style>
