@@ -41,40 +41,31 @@
 
                   ><h6 class="menueItem">
                     <b style="color: #efede9"> محاسبه قیمت حباب </b>
-                  </h6></router-link
-                >
+                  </h6></router-link>
               </b-nav-item>
             </div>
 
-            <b-nav-item class="ml-2" href="/MainChart">
-              <h6  class="menueItem"><b  style="color: #efede9"> نمودار </b></h6>
-            </b-nav-item>
 
-            <!-- <b-nav-item class="ml-2" href="/Connect">
-              <h6  class="menueItem"><b   style="color: #efede9"> ارتباط با ما </b></h6>
-            </b-nav-item> -->
+               <div>
+              <b-nav-item class="ml-2">
+                <router-link to="/MainChart"
 
-            <b-nav-item class="ml-2" href="/Questions">
-              <h6  class="menueItem"><b style="color: #efede9"> ویدیو‌ های آموزشی </b></h6>
-            </b-nav-item>
+                  ><h6 class="menueItem">
+                    <b style="color: #efede9"> نمودار</b>
+                  </h6></router-link>
+              </b-nav-item>
+            </div>
 
-            <!-- <b-nav-item class="ml-2" href="ShowPrice2">
-              <h6>
-                <b style="color: #efede9"> قیمت انلاین- 2 </b>
-              </h6>
-            </b-nav-item>
+               <div>
+              <b-nav-item class="ml-2">
+                <router-link to="/Questions"
 
-            <b-nav-item class="ml-2" href="ShowPrice3">
-              <h6><b style="color: #efede9"> قیمت انلاین- 3 </b></h6>
-            </b-nav-item> -->
+                  ><h6 class="menueItem">
+                    <b style="color: #efede9"> ویدیو‌ های آموزشی </b>
+                  </h6></router-link>
+              </b-nav-item>
+            </div>
 
-            <!-- <b-nav-item class="ml-2" href="#">
-              <h6><b style="color: #bea44d"> اخبار توليد و تجارت </b></h6>
-            </b-nav-item>
-
-            <b-nav-item class="ml-2" href="#">
-              <h6><b style="color: #bea44d"> اخبار اقتصادی </b></h6>
-            </b-nav-item> -->
           </b-navbar-nav>
         </b-collapse>
 
