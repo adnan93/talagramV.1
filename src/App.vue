@@ -1,7 +1,6 @@
 <template>
-  <v-app style="font-family: IRYekan; background-color: #efede9" >
-    <b-row v-if="$route.name!='Prices'" dir="rtl">
-
+  <v-app style="font-family: IRYekan; background-color: #efede9">
+    <b-row v-if="$route.name != 'Prices'" dir="rtl">
       <b-navbar toggleable="lg" style="background-color: #222222">
         <div>
           <!-- Just an image -->
@@ -25,38 +24,40 @@
           </router-link>
         </b-navbar-brand>
 
-        <b-navbar-toggle style="color:white;" target="nav-collapse"></b-navbar-toggle>
+        <b-navbar-toggle
+          style="color: white"
+          target="nav-collapse"
+        ></b-navbar-toggle>
 
         <b-collapse class="mr-15" id="nav-collapse" is-nav>
-          <b-navbar-nav >
+          <b-navbar-nav>
             <b-nav-item class="ml-2" href="#">
               <h6>
                 <b style="color: #bea44d"> </b>
               </h6>
             </b-nav-item>
 
-            <div >
-              <b-nav-item class="ml-2">
+            <div>
+              <b-nav-item class="">
                 <router-link to="/about"
-
                   ><h6 class="menueItem">
                     <b style="color: #efede9"> محاسبه قیمت حباب </b>
-                  </h6></router-link>
+                  </h6></router-link
+                >
               </b-nav-item>
             </div>
 
-
-               <div>
+            <div>
               <b-nav-item class="ml-2">
                 <router-link to="/MainChart"
-
                   ><h6 class="menueItem">
                     <b style="color: #efede9"> نمودار</b>
-                  </h6></router-link>
+                  </h6></router-link
+                >
               </b-nav-item>
             </div>
 
-               <div>
+            <!-- <div>
               <b-nav-item class="ml-2">
                 <router-link to="/Questions"
 
@@ -64,17 +65,53 @@
                     <b style="color: #efede9"> ویدیو‌ های آموزشی </b>
                   </h6></router-link>
               </b-nav-item>
+            </div> -->
+
+            <div>
+              <b-nav-item class="ml-2">
+                <router-link to="/Questions"
+                  ><h6 class="menueItem">
+                    <b style="color: #efede9"> ویدیو‌ های تحلیلی </b>
+                  </h6></router-link
+                >
+              </b-nav-item>
             </div>
 
+            <div>
+              <b-nav-item class="ml-2" href="https://tahlilonline.com/category/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-%d8%a8%d9%88%d8%b1%d8%b3/"
+                  ><h6 class="menueItem">
+                    <b style="color: #efede9"> مطالب آموزشی</b>
+                  </h6>
+              </b-nav-item>
+            </div>
+
+            <div>
+              <b-nav-item class="ml-2" href="https://t.me/talagram_chnl">
+                
+                <h6 class="menueItem_telegram">
+                  <b style="color: #efede9b;  "> کانال تلگرام</b>
+
+                </h6>
+              </b-nav-item>
+            </div>
           </b-navbar-nav>
         </b-collapse>
 
+   
+        
+
+     
       </b-navbar>
     </b-row>
 
     <router-view />
 
-    <b-row v-if="$route.name!='Prices'" class="footer" align="center" dir="rtl">
+    <b-row
+      v-if="$route.name != 'Prices'"
+      class="footer"
+      align="center"
+      dir="rtl"
+    >
       <hr />
 
       <b-col>
@@ -188,7 +225,8 @@ export default {
 <style scoped lang="scss">
 @font-face {
   font-family: "IRYekan";
-  src: local("IRYekan"), url(./font/IRANSansWeb_LightJustPersianNum.1bb7aba5.woff) format("truetype");
+  src: local("IRYekan"),
+    url(./font/IRANSansWeb_LightJustPersianNum.1bb7aba5.woff) format("truetype");
 }
 .chart {
   position: absolute;
@@ -246,7 +284,7 @@ a {
 }
 
 .menueItem :hover {
- // background-color: brown;
+  // background-color: brown;
 
   color: #f5d438 !important;
   transition: 0.5s;
@@ -254,25 +292,27 @@ a {
 }
 
 .navbar-light .navbar-toggler {
-    color: #f5d438;
-    border-color: rgb(85, 81, 78);
-    
+  color: #f5d438;
+  border-color: rgb(85, 81, 78);
 }
 
 .navbar-toggler {
-    padding: 0.25rem 0.75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: #c4ab30;
-    border: 0.5px solid transparent;
-    border-radius: 0.25rem;
-    transition: box-shadow 0.15s ease-in-out;
-    border-color: #c4ab30 !important;
-    color: #c4ab30 !important;
-    margin-left: 0.5em;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: #c4ab30;
+  border: 0.5px solid transparent;
+  border-radius: 0.25rem;
+  transition: box-shadow 0.15s ease-in-out;
+  border-color: #c4ab30 !important;
+  color: #c4ab30 !important;
+  margin-left: 0.5em;
 }
 
-
-
-
+.menueItem_telegram {
+  background-color: #0088cc;
+  width: 80px;
+  margin-left: 25px;
+}
 </style>
+

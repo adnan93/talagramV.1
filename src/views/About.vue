@@ -23,6 +23,7 @@
               style="width: 10px"
               color="#d9b34a"
               right
+              height="50px"
               :menu-props="{ contentClass: 'three-dropdown' }"
             ></v-select>
 
@@ -34,6 +35,8 @@
               outlined
               dense
               color="#d9b34a"
+                            height="50px"
+
             ></v-text-field>
           </b-col>
 
@@ -50,6 +53,8 @@
               outlined
               color="#d9b34a"
               :menu-props="{ contentClass: 'three-dropdown' }"
+                            height="50px"
+
             ></v-select>
             <v-text-field
               reverse
@@ -59,6 +64,8 @@
               outlined
               dense
               color="#d9b34a"
+                            height="50px"
+
             ></v-text-field>
           </b-col>
         </b-row>
@@ -73,6 +80,8 @@
               outlined
               dense
               color="#d9b34a"
+                            height="50px"
+
             ></v-text-field>
           </b-col>
         </b-row>
@@ -86,6 +95,8 @@
               v-model="dollarPrice"
               outlined
               dense
+                            height="50px"
+
               color="#d9b34a"
             >
             </v-text-field>
@@ -371,13 +382,21 @@ export default {
   padding-left: 15%;
 } */
 
+
+
+::v-deep .v-application--is-ltr .v-text-field--reverse .v-label {
+    transform-origin: top right;
+    padding-top: 10px !important;
+}
+
 ::v-deep .select {
   width: 350px !important;
-  border-radius: 20px;
+  border-radius: 15px;
   color: #d9b34a !important;
   text-align: right !important;
   padding-left: 0px !important;
   padding-right: 0px !important;
+  
 }
 
 .v-list-item__content {
@@ -423,4 +442,6 @@ input {
   /* grid-template-columns: repeat(auto-fill, minmax(33%, auto)); */
   text-align: right;
 }
+
+
 </style>
