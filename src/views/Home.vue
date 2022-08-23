@@ -3466,29 +3466,45 @@ export default {
           this.def_talaZarPrice1 =
             this.talaZarPriceOpen / this.talaZarPricePrevious - 1;
 
-          this.def_talaZarPrice =
-            this.decimalAdjust("round", this.def_talaZarPrice1, -3) * 100;
+          this.def_talaZarPrice = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_talaZarPrice1, -4) * 100,
+            -4
+          );
 
           this.talaLotusPricePrevious =
             response.data.Data.talaLotusPricePrevious;
-          this.def_talaLotusPrice =
+
+          this.def_talaLotusPrice1 =
             this.talaLotusPriceOpen / this.talaLotusPricePrevious - 1;
-          this.def_talaLotusPrice =
-            this.decimalAdjust("round", this.def_talaLotusPrice, -3) * 100;
+
+          this.def_talaLotusPrice = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_talaLotusPrice1, -4) * 100,
+            -4
+          );
 
           this.talaAyarPricePrevious = response.data.Data.talaAyarPricePrevious;
           this.def_talaAyarPrice1 =
             this.talaAyarPriceOpen / this.talaAyarPricePrevious - 1;
-          this.def_talaAyarPrice =
-            this.decimalAdjust("round", this.def_talaAyarPrice1, -3) * 100;
+
+          this.def_talaAyarPrice = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_talaAyarPrice1, -4) * 100,
+            -4
+          );
 
           this.talaGoharPricePrevious =
             response.data.Data.talaGoharPricePrevious;
-          this.def_talaGoharPrice =
+
+          this.def_talaGoharPrice1 =
             this.talaGoharPriceOpen / this.talaGoharPricePrevious - 1;
-          (this.def_talaGoharPrice =
-            this.decimalAdjust("round", this.def_talaGoharPrice, -3) * 100),
-            -4;
+
+          this.def_talaGoharPrice = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_talaGoharPrice1, -4) * 100,
+            -4
+          );
 
           this.talaKahrobaPricePrevious =
             response.data.Data.talaKahrobaPricePrevious;
@@ -3496,12 +3512,13 @@ export default {
           this.def_talaKahrobaPrice1 =
             this.talaKahrobaPriceOpen / this.talaKahrobaPricePrevious - 1;
 
-          (this.def_talaKahrobaPrice = this.decimalAdjust(
+          this.def_talaKahrobaPrice = this.decimalAdjust(
             "round",
             this.decimalAdjust("round", this.def_talaKahrobaPrice1, -4) * 100,
             -4
-          )),
-            -4;
+          );
+
+          -4;
 
           this.HobabTalaKahrobaSeke = this.decimalAdjust(
             "round",
@@ -3707,7 +3724,7 @@ div.card-header {
   height: 50px;
 }
 
-.v-input__slot .v-label{
-top: 15px !important;
+.v-input__slot .v-label {
+  top: 15px !important;
 }
 </style>

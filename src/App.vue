@@ -68,8 +68,10 @@
             </div> -->
 
             <div>
-              <b-nav-item class="ml-2">
+              <b-nav-item class="ml-2" 
+              target="_blank">
                 <router-link to="/Questions"
+
                   ><h6 class="menueItem">
                     <b style="color: #efede9"> ویدیو‌ های تحلیلی </b>
                   </h6></router-link
@@ -78,7 +80,10 @@
             </div>
 
             <div>
-              <b-nav-item class="ml-2" href="https://tahlilonline.com/category/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-%d8%a8%d9%88%d8%b1%d8%b3/"
+              <b-nav-item 
+              class="ml-2" 
+              href="https://tahlilonline.com/category/%d8%a2%d9%85%d9%88%d8%b2%d8%b4-%d8%a8%d9%88%d8%b1%d8%b3/"
+              target="_blank"
                   ><h6 class="menueItem">
                     <b style="color: #efede9"> مطالب آموزشی</b>
                   </h6>
@@ -86,7 +91,9 @@
             </div>
 
             <div>
-              <b-nav-item class="ml-2" href="https://t.me/talagram_chnl">
+              <b-nav-item class="ml-2" 
+              href="https://t.me/talagram_chnl"
+                            target="_blank">
                 
                 <h6 class="menueItem_telegram">
                   <b style="color: #efede9b;  "> کانال تلگرام</b>
@@ -102,6 +109,7 @@
 
      
       </b-navbar>
+
     </b-row>
 
     <router-view />
