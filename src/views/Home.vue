@@ -188,15 +188,15 @@
                       </b-col>
 
                       <b-col class="pr-0" cols="3">
-                        <div v-if="HobabAbshode > 0">
+                        <div v-if="def_abshode > 0">
                           <p style="color: green">
-                            {{ numberWithCommas(HobabAbshode) }}%
+                            {{ numberWithCommas(def_abshode) }}%
                           </p>
                         </div>
 
                         <div v-else>
                           <p style="color: red">
-                            ({{ numberWithCommas(HobabAbshode) }}%)
+                            ({{ numberWithCommas(def_abshode) }}%)
                           </p>
                         </div>
                       </b-col>
@@ -302,14 +302,14 @@
                       </b-col>
 
                       <b-col class="p-0" cols="3">
-                        <div v-if="HobabAbshode > 0">
+                        <div v-if="def_sekeEmami > 0">
                           <p style="color: green">
-                            {{ numberWithCommas(HobabAbshode) }}%
+                            {{ numberWithCommas(def_sekeEmami) }}%
                           </p>
                         </div>
                         <div v-else>
                           <p style="color: red">
-                            ({{ numberWithCommas(HobabAbshode) }}%)
+                            ({{ numberWithCommas(def_sekeEmami) }}%)
                           </p>
                         </div>
                       </b-col>
@@ -3220,6 +3220,42 @@ export default {
       talaGoharPricePrevious: 0,
       talaKahrobaPricePrevious: 0,
 
+      abshodeYesterdayPrice:0,
+      sekeEmamiYesterdayPrice:0,
+      sekeBaharAzadiYesterdayPrice:0,
+      nimSekeYesterdayPrice:0,
+      robSekeYesterdayPrice:0,
+      sekeGeramyYesterdayPrice:0,
+      talaye18YesterdayPrice:0,
+      talaye24YesterdayPrice:0,
+      arzeshTalayeAbshodeYesterdayPrice:0,
+      arzeshTalayeKhamSekeTamamYesterdayPrice:0,
+
+      sekeBankRefahYesterdayPrice:0,
+      sekeBankSaderatYesterdayPrice:0,
+      sekeBankMelatYesterdayPrice:0,
+      sekeBankSamanYesterdayPrice:0,
+
+      sandoghZarYesterdayPrice:0,
+      sandoghGoharYesterdayPrice:0,
+      sandoghKahrobaYesterdayPrice:0,
+
+      sandoghMesghalYesterdayPrice:0,
+
+      def_abshode:0,
+      def_sekeEmami:0,
+      def_sekeBaharAzadi:0,
+      def_nimSeke:0,
+      def_robSeke:0,
+      def_sekeGeramy:0,
+      def_talaye18:0,
+      def_talaye24:0,
+      def_arzeshTalayeAbshode:0,
+      def_arzeshTalayeKhamSekeTamam:0,
+
+
+
+
       def_talaLotusPrice: 0,
       def_talaAyarPrice: 0,
       def_talaZarPrice: 0,
@@ -3414,6 +3450,23 @@ export default {
             -4
           );
 
+
+
+          this.sekeEmamiYesterdayPrice =   response.data.Data.sekeEmamiYesterdayPrice;
+          this.sekePrice = response.data.Data.sekePrice;
+
+           this.def_sekeEmami1 =
+            this.sekePrice / this.sekeEmamiYesterdayPrice - 1;
+
+
+               this.def_sekeEmami = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_sekeEmami1, -4) * 100,
+            -4
+          );
+
+
+
           this.talaLotusPricePrevious =
             response.data.Data.talaLotusPricePrevious;
 
@@ -3428,6 +3481,17 @@ export default {
             ) * 100,
             -4
           );
+
+
+          
+
+            this.abshodeYesterdayPrice =
+            response.data.Data.abshodeYesterdayPrice;
+
+
+
+
+
 
           this.HobabTalaAyarNav = this.decimalAdjust(
             "round",
