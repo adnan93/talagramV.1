@@ -417,14 +417,14 @@
                         </b-col>
 
                         <b-col class="pr-0" cols="3">
-                          <div v-if="sekeGhadimPrice > 0">
+                          <div v-if="def_sekeBaharAzadi > 0">
                             <p style="color: green">
-                              {{ numberWithCommas(sekeGhadimPrice) }}%
+                              {{ numberWithCommas(def_sekeBaharAzadi) }}%
                             </p>
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(sekeGhadimPrice) }}%)
+                              ({{ numberWithCommas(def_sekeBaharAzadi) }}%)
                             </p>
                           </div>
                         </b-col>
@@ -530,14 +530,14 @@
                         </b-col>
 
                         <b-col class="pr-0" cols="3">
-                          <div v-if="nimPrice > 0">
+                          <div v-if="def_nim > 0">
                             <p style="color: green">
-                              {{ numberWithCommas(nimPrice) }}%
+                              {{ numberWithCommas(def_nim) }}%
                             </p>
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(nimPrice) }}%)
+                              ({{ numberWithCommas(def_nim) }}%)
                             </p>
                           </div>
                         </b-col>
@@ -643,14 +643,14 @@
                         </b-col>
 
                         <b-col class="pr-0" cols="3">
-                          <div v-if="robPrice > 0">
+                          <div v-if="def_rob > 0">
                             <p style="color: green">
-                              {{ numberWithCommas(robPrice) }}%
+                              {{ numberWithCommas(def_rob) }}%
                             </p>
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(robPrice) }}%)
+                              ({{ numberWithCommas(def_rob) }}%)
                             </p>
                           </div>
                         </b-col>
@@ -756,14 +756,14 @@
                         </b-col>
 
                         <b-col class="pr-0" cols="3">
-                          <div v-if="sekeGeramiPrice > 0">
+                          <div v-if="def_Gerami > 0">
                             <p style="color: green">
-                              {{ numberWithCommas(sekeGeramiPrice) }}%
+                              {{ numberWithCommas(def_Gerami) }}%
                             </p>
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(sekeGeramiPrice) }}%)
+                              ({{ numberWithCommas(def_Gerami) }}%)
                             </p>
                           </div>
                         </b-col>
@@ -869,14 +869,14 @@
                         </b-col>
 
                         <b-col class="pr-0" cols="3">
-                          <div v-if="-0.123 > 0">
+                          <div v-if="def_geramTala > 0">
                             <p style="color: green">
-                              {{ numberWithCommas(12.1) }}%
+                              {{ numberWithCommas(def_geramTala) }}%
                             </p>
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(-12.52) }}%)
+                              ({{ numberWithCommas(def_geramTala) }}%)
                             </p>
                           </div>
                         </b-col>
@@ -927,14 +927,14 @@
                         </b-col>
 
                         <b-col class="pr-0" cols="3">
-                          <div v-if="HobabGerami > 0">
+                          <div v-if="def_gram24Tala > 0">
                             <p style="color: green">
-                              {{ numberWithCommas(HobabGerami) }}%
+                              {{ numberWithCommas(def_gram24Tala) }}%
                             </p>
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(gram24TalaPrice) }}%)
+                              ({{ numberWithCommas(def_gram24Tala) }}%)
                             </p>
                           </div>
                         </b-col>
@@ -985,14 +985,14 @@
                         </b-col>
 
                         <b-col class="pr-0" cols="3">
-                          <div v-if="mesghalRiyal > 0">
+                          <div v-if="def_mesghalRiyal > 0">
                             <p style="color: green">
-                              {{ numberWithCommas(mesghalRiyal) }}%
+                              {{ numberWithCommas(def_mesghalRiyal) }}%
                             </p>
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(mesghalRiyal) }}%)
+                              ({{ numberWithCommas(def_mesghalRiyal) }}%)
                             </p>
                           </div>
                         </b-col>
@@ -1043,14 +1043,14 @@
                         </b-col>
 
                         <b-col class="pr-0" cols="3">
-                          <div v-if="sekeRiyal > 0">
+                          <div v-if="def_sekeRiyal > 0">
                             <p style="color: green">
-                              {{ numberWithCommas(sekeRiyal) }}%
+                              {{ numberWithCommas(def_sekeRiyal) }}%
                             </p>
                           </div>
                           <div v-else>
                             <p style="color: red">
-                              ({{ numberWithCommas(sekeRiyal) }}%)
+                              ({{ numberWithCommas(def_sekeRiyal) }}%)
                             </p>
                           </div>
                         </b-col>
@@ -1116,14 +1116,14 @@
                             </b-col>
 
                             <b-col class="p-0" cols="3">
-                              <div v-if="13.25 > 0">
+                              <div v-if="def_sekeRefahPrice > 0">
                                 <p style="color: green">
-                                  {{ numberWithCommas(13.25) }}%
+                                  {{ numberWithCommas(def_sekeRefahPrice) }}%
                                 </p>
                               </div>
                               <div v-else>
                                 <p style="color: red">
-                                  ({{ numberWithCommas(13.25) }}%)
+                                  ({{ numberWithCommas(def_sekeRefahPrice) }}%)
                                 </p>
                               </div>
                             </b-col>
@@ -1287,14 +1287,16 @@
                             </b-col>
 
                             <b-col class="p-0" cols="3">
-                              <div v-if="sekeSaderatPrice > 0">
+                              <div v-if="def_sekeSaderatPrice > 0">
                                 <p style="color: green">
-                                  {{ numberWithCommas(sekeSaderatPrice) }}%
+                                  {{ numberWithCommas(def_sekeSaderatPrice) }}%
                                 </p>
                               </div>
                               <div v-else>
                                 <p style="color: red">
-                                  ({{ numberWithCommas(sekeSaderatPrice) }}%)
+                                  ({{
+                                    numberWithCommas(def_sekeSaderatPrice)
+                                  }}%)
                                 </p>
                               </div>
                             </b-col>
@@ -1463,14 +1465,14 @@
                             </b-col>
 
                             <b-col class="p-0" cols="3">
-                              <div v-if="sekeMellatPrice > 0">
+                              <div v-if="def_sekeMellat > 0">
                                 <p style="color: green">
-                                  {{ numberWithCommas(sekeMellatPrice) }}%
+                                  {{ numberWithCommas(def_sekeMellat) }}%
                                 </p>
                               </div>
                               <div v-else>
                                 <p style="color: red">
-                                  ({{ numberWithCommas(sekeMellatPrice) }}%)
+                                  ({{ numberWithCommas(def_sekeMellat) }}%)
                                 </p>
                               </div>
                             </b-col>
@@ -1633,14 +1635,14 @@
                             </b-col>
 
                             <b-col class="p-0" cols="3">
-                              <div v-if="sekeSamanPrice > 0">
+                              <div v-if="def_sekeSaman > 0">
                                 <p style="color: green">
-                                  {{ numberWithCommas(sekeSamanPrice) }}%
+                                  {{ numberWithCommas(def_sekeSaman) }}%
                                 </p>
                               </div>
                               <div v-else>
                                 <p style="color: red">
-                                  ({{ numberWithCommas(sekeSamanPrice) }}%)
+                                  ({{ numberWithCommas(def_sekeSaman) }}%)
                                 </p>
                               </div>
                             </b-col>
@@ -1801,14 +1803,14 @@
                             </b-col>
 
                             <b-col class="p-0" cols="3">
-                              <div v-if="sekeAyandehPrice > 0">
+                              <div v-if="def_sekeAyandeh > 0">
                                 <p style="color: green">
-                                  {{ numberWithCommas(sekeAyandehPrice) }}%
+                                  {{ numberWithCommas(def_sekeAyandeh) }}%
                                 </p>
                               </div>
                               <div v-else>
                                 <p style="color: red">
-                                  ({{ numberWithCommas(sekeAyandehPrice) }}%)
+                                  ({{ numberWithCommas(def_sekeAyandeh) }}%)
                                 </p>
                               </div>
                             </b-col>
@@ -3220,47 +3222,50 @@ export default {
       talaGoharPricePrevious: 0,
       talaKahrobaPricePrevious: 0,
 
-      abshodeYesterdayPrice:0,
-      sekeEmamiYesterdayPrice:0,
-      sekeBaharAzadiYesterdayPrice:0,
-      nimSekeYesterdayPrice:0,
-      robSekeYesterdayPrice:0,
-      sekeGeramyYesterdayPrice:0,
-      talaye18YesterdayPrice:0,
-      talaye24YesterdayPrice:0,
-      arzeshTalayeAbshodeYesterdayPrice:0,
-      arzeshTalayeKhamSekeTamamYesterdayPrice:0,
+      abshodeYesterdayPrice: 0,
+      sekeEmamiYesterdayPrice: 0,
+      sekeBaharAzadiYesterdayPrice: 0,
+      nimSekeYesterdayPrice: 0,
+      robSekeYesterdayPrice: 0,
+      sekeGeramyYesterdayPrice: 0,
+      talaye18YesterdayPrice: 0,
+      talaye24YesterdayPrice: 0,
+      arzeshTalayeAbshodeYesterdayPrice: 0,
+      arzeshTalayeKhamSekeTamamYesterdayPrice: 0,
 
-      sekeBankRefahYesterdayPrice:0,
-      sekeBankSaderatYesterdayPrice:0,
-      sekeBankMelatYesterdayPrice:0,
-      sekeBankSamanYesterdayPrice:0,
+      sekeBankRefahYesterdayPrice: 0,
+      sekeBankSaderatYesterdayPrice: 0,
+      sekeBankMelatYesterdayPrice: 0,
+      sekeBankSamanYesterdayPrice: 0,
 
-      sandoghZarYesterdayPrice:0,
-      sandoghGoharYesterdayPrice:0,
-      sandoghKahrobaYesterdayPrice:0,
+      sandoghZarYesterdayPrice: 0,
+      sandoghGoharYesterdayPrice: 0,
+      sandoghKahrobaYesterdayPrice: 0,
 
-      sandoghMesghalYesterdayPrice:0,
+      sandoghMesghalYesterdayPrice: 0,
 
-      def_abshode:0,
-      def_sekeEmami:0,
-      def_sekeBaharAzadi:0,
-      def_nimSeke:0,
-      def_robSeke:0,
-      def_sekeGeramy:0,
-      def_talaye18:0,
-      def_talaye24:0,
-      def_arzeshTalayeAbshode:0,
-      def_arzeshTalayeKhamSekeTamam:0,
+      def_abshode: 0,
+      def_sekeEmami: 0,
+      def_sekeBaharAzadi: 0,
+      def_nim: 0,
+      def_rob: 0,
+      def_Gerami: 0,
+      def_geramTala: 0,
+      def_gram24Tala: 0,
+      def_mesghalRiyal: 0,
+      def_sekeRiyal: 0,
 
-
-
+      def_sekeRefahPrice: 0,
+      def_sekeSaderatPrice: 0,
+      def_sekeMellat: 0,
+      def_sekeSaman: 0,
 
       def_talaLotusPrice: 0,
       def_talaAyarPrice: 0,
       def_talaZarPrice: 0,
       def_talaGoharPrice: 0,
       def_talaKahrobaPrice: 0,
+      def_sekeAyandeh:0,
 
       showHobabRefah: false,
       showHobabSaderat: false,
@@ -3295,7 +3300,9 @@ export default {
         .then((response) => {
           this.dollar = response.data.Data.usdPrice;
           this.ons = response.data.Data.onsPrice.toLocaleString();
+
           this.silver = response.data.Data.silverPrice;
+
           this.geramTalaPrice =
             response.data.Data.geramTalaPrice.toLocaleString();
 
@@ -3450,20 +3457,222 @@ export default {
             -4
           );
 
-
-
-          this.sekeEmamiYesterdayPrice =   response.data.Data.sekeEmamiYesterdayPrice;
+          this.sekeEmamiYesterdayPrice =
+            response.data.Data.sekeEmamiYesterdayPrice;
           this.sekePrice = response.data.Data.sekePrice;
 
-           this.def_sekeEmami1 =
+          this.def_sekeEmami1 =
             this.sekePrice / this.sekeEmamiYesterdayPrice - 1;
 
-
-               this.def_sekeEmami = this.decimalAdjust(
+          this.def_sekeEmami = this.decimalAdjust(
             "round",
             this.decimalAdjust("round", this.def_sekeEmami1, -4) * 100,
             -4
           );
+
+          this.sekeBaharAzadiYesterdayPrice =
+            response.data.Data.sekeBaharAzadiYesterdayPrice;
+          this.sekeGhadimPrice = response.data.Data.sekeGhadimPrice;
+
+          this.def_sekeBaharAzadi1 =
+            this.sekeGhadimPrice / this.sekeBaharAzadiYesterdayPrice - 1;
+
+          this.def_sekeBaharAzadi = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_sekeBaharAzadi1, -4) * 100,
+            -4
+          );
+
+          this.abshodeYesterdayPrice = response.data.Data.abshodeYesterdayPrice;
+          this.mesghalPrice = response.data.Data.mesghalPrice;
+
+          this.def_abshode1 =
+            this.mesghalPrice / this.abshodeYesterdayPrice - 1;
+
+          this.def_abshode = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_abshode1, -4) * 100,
+            -4
+          );
+
+          this.nimSekeYesterdayPrice = response.data.Data.nimSekeYesterdayPrice;
+          this.nimPrice = response.data.Data.nimPrice;
+
+          this.def_nim1 = this.nimPrice / this.nimSekeYesterdayPrice - 1;
+
+          this.def_nim = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_nim1, -4) * 100,
+            -4
+          );
+
+          this.robSekeYesterdayPrice = response.data.Data.robSekeYesterdayPrice;
+          this.robPrice = response.data.Data.robPrice;
+
+          this.def_rob1 = this.robPrice / this.robSekeYesterdayPrice - 1;
+
+          this.def_rob = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_rob1, -4) * 100,
+            -4
+          );
+
+          this.sekeGeramyYesterdayPrice =
+            response.data.Data.sekeGeramyYesterdayPrice;
+          this.sekeGeramiPrice = response.data.Data.sekeGeramiPrice;
+
+          this.def_Gerami1 =
+            this.sekeGeramiPrice / this.sekeGeramyYesterdayPrice - 1;
+
+          this.def_Gerami = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_Gerami1, -4) * 100,
+            -4
+          );
+
+          this.talaye18YesterdayPrice =
+            response.data.Data.talaye18YesterdayPrice;
+
+          this.geramTalaPrice = response.data.Data.geramTalaPrice;
+
+          this.def_geramTala1 =
+            this.geramTalaPrice / this.talaye18YesterdayPrice - 1;
+
+          this.def_geramTala = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_geramTala1, -4) * 100,
+            -4
+          );
+
+          this.talaye24YesterdayPrice =
+            response.data.Data.talaye24YesterdayPrice;
+
+          this.gram24TalaPrice1 = response.data.Data.gram24TalaPrice;
+
+          this.def_gram24Tala1 =
+            this.gram24TalaPrice1 / this.talaye24YesterdayPrice - 1;
+
+          this.def_gram24Tala = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_gram24Tala1, -4) * 100,
+            -4
+          );
+
+          this.arzeshTalayeAbshodeYesterdayPrice =
+            response.data.Data.arzeshTalayeAbshodeYesterdayPrice;
+
+          this.mesghalRiyal = response.data.Data.mesghalRiyal;
+
+          this.def_mesghalRiyal1 =
+            this.mesghalRiyal / this.arzeshTalayeAbshodeYesterdayPrice - 1;
+
+          this.def_mesghalRiyal = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_mesghalRiyal1, -4) * 100,
+            -4
+          );
+
+          this.arzeshTalayeKhamSekeTamamYesterdayPrice =
+            response.data.Data.arzeshTalayeKhamSekeTamamYesterdayPrice;
+
+          this.sekeRiyal = response.data.Data.sekeRiyal;
+
+          this.def_sekeRiyal1 =
+            this.sekeRiyal / this.arzeshTalayeKhamSekeTamamYesterdayPrice - 1;
+
+          this.def_sekeRiyal = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_sekeRiyal1, -4) * 100,
+            -4
+          );
+
+          this.sekeBankRefahYesterdayPrice =
+            response.data.Data.sekeBankRefahYesterdayPrice;
+
+          this.sekeRefahPrice = response.data.Data.sekeRefahPrice;
+
+          this.def_sekeRefahPrice1 =
+            this.sekeRefahPrice / this.sekeBankRefahYesterdayPrice - 1;
+
+          this.def_sekeRefahPrice = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_sekeRefahPrice1, -4) * 100,
+            -4
+          );
+
+          this.sekeBankSaderatYesterdayPrice =
+            response.data.Data.sekeBankSaderatYesterdayPrice;
+
+          this.sekeSaderatPrice = response.data.Data.sekeSaderatPrice;
+
+          this.def_sekeSaderatPrice1 =
+            this.sekeSaderatPrice / this.sekeBankSaderatYesterdayPrice - 1;
+
+          this.def_sekeSaderatPrice = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_sekeSaderatPrice1, -4) * 100,
+            -4
+          );
+
+          this.sekeBankMelatYesterdayPrice =
+            response.data.Data.sekeBankMelatYesterdayPrice;
+
+          this.sekeMellatPrice = response.data.Data.sekeMellatPrice;
+
+          this.def_sekeMellat1 =
+            this.sekeMellatPrice / this.sekeBankMelatYesterdayPrice - 1;
+
+          this.def_sekeMellat = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_sekeMellat1, -4) * 100,
+            -4
+          );
+
+          this.sekeBankSamanYesterdayPrice =
+            response.data.Data.sekeBankSamanYesterdayPrice;
+
+          this.sekeSamanPrice = response.data.Data.sekeSamanPrice;
+
+          this.def_sekeSamanPrice1 =
+            this.sekeSamanPrice / this.sekeBankSamanYesterdayPrice - 1;
+
+          this.def_sekeSaman = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_sekeSamanPrice1, -4) * 100,
+            -4
+          );
+
+          this.sekeBankAyandeYesterdayPrice =
+            response.data.Data.sekeBankAyandeYesterdayPrice;
+
+          this.sekeAyandehPrice = response.data.Data.sekeAyandehPrice;
+
+          this.def_sekeAyandehPrice1 =
+            this.sekeAyandehPrice / this.sekeBankAyandeYesterdayPrice - 1;
+
+          this.def_sekeAyandeh = this.decimalAdjust(
+            "round",
+            this.decimalAdjust("round", this.def_sekeAyandehPrice1, -4) * 100,
+            -4
+          );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3482,16 +3691,7 @@ export default {
             -4
           );
 
-
-          
-
-            this.abshodeYesterdayPrice =
-            response.data.Data.abshodeYesterdayPrice;
-
-
-
-
-
+          this.abshodeYesterdayPrice = response.data.Data.abshodeYesterdayPrice;
 
           this.HobabTalaAyarNav = this.decimalAdjust(
             "round",
